@@ -1,0 +1,13 @@
+version: "2"
+services:
+  node:
+    image: "node"
+    user: "node"
+    working_dir: /home/carlos/Web/myWebpage/
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/carlos/Web/myWebpage/
+    expose:
+      - "8081"
+    command: "npm install webpack webpack-cli --save-dev"
