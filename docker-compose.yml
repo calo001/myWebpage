@@ -8,6 +8,14 @@ services:
       - NODE_ENV=development
     volumes:
       - ./:/home/carlos/Web/myWebpage/
-    expose:
-      - "8081"
-    command: "npm install webpack webpack-cli --save-dev"
+    ports:
+      - 8080:8080
+    command: "npm run start"
+#    command: "npm install webpack-dev-server --save-dev"
+#    command: "npm install sass --save-dev"
+#    command: "npm run dev"
+#    command: "npm run build" #For production
+#    command: "npm i terser@3.14 --save-dev"
+#    command: "npm i --save-dev html-webpack-plugin"
+#    command: "npm install style-loader css-loader sass-loader node-sass --save-dev"
+#    command: "npm install node-sass --save-dev"
