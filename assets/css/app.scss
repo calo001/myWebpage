@@ -1,3 +1,453 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,400,500,600');
+@import 'modules/_mixins.scss';
+@import 'modules/_variables.scss';
+
+html {
+  padding: 0;
+}
+
 body {
-  background: red;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.2em;
+  background-color: white;
+  margin: 0;
+}
+
+h2 {
+  color: $red;
+  font-weight: normal;
+  font-size: 1.8em;
+  text-align: center;
+  margin-top: 0;
+}
+
+footer {
+  background: $odd-gray;
+}
+.floatingmenu img {
+  max-width: 40px;
+  position: fixed;
+  top: $small;
+  right: $small;
+  background-color: $light-red;
+  padding: $small;
+  border-radius: 50%;
+  z-index: 200;
+  @include shadow;
+  @include transition;
+  &:hover {
+    background-color: $accent_color
+  }
+}
+
+.hero {
+  @include gradient($red_gradient_1, $red_gradient_2);
+  border-radius: 0 0 60px 60px;
+  @include shadow_red;
+}
+
+.container {
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.separator {
+  padding: $small-padding;
+
+  &:nth-child(even) {
+    background: $odd-gray;
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: $big 0px;
+  text-align: center;
+  .greeting {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $white;
+    font-size: 2.5em;
+    .nombre {
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}
+
+.about {
+    text-align:: center;
+    .summary {
+      margin-top: 2.5em;
+      color: $gray;
+    }
+    .my-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: $default-margin;
+      .redbacklogo {
+        @include transition;
+        width: 230px;
+        height: 230px;
+        border-radius: 40px;
+        @include gradient($red_gradient_1, $red_gradient_2);
+        @include shadow;
+      }
+      .backlogo {
+        @include transition;
+        width: 230px;
+        height: 230px;
+        background: $light-gray;
+        display: flex;
+        justify-content: center;
+        border-radius: 40px;
+        transform: translate(20px, 20px);
+        @include shadow;
+      }
+      .logo:hover {
+        .redbacklogo {
+          transform: translate(-15px);
+        }
+        .backlogo {
+          transform: translate(50px, 20px);
+        }
+      }
+    }
+}
+
+.about_grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 280px;
+  .about_card {
+    padding: $default-margin;
+    margin: 10px auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 20px;
+    @include gradient($red_gradient_1, $red_gradient_2);
+    @include transition;
+    figure {
+      margin: 0;
+    }
+    img {
+      margin: $about-card-margin;
+    }
+    .grid_description {
+        color: $white;
+        position: relative;
+        padding: $large-padding;
+    }
+    &:hover {
+      background: $accent_color;
+      @include shadow_red;
+    }
+  }
+}
+
+.grid_designs {
+  width: 100%;
+  display: inline-grid;
+  grid-row-gap: 1em;
+  grid-template-columns: 1fr;
+  .design {
+    text-align: center;
+    img {
+      border-radius: 20px;
+      @include transition;
+    }
+    figure {
+      margin: 0;
+    }
+    figcaption {
+      text-align: center;
+      margin-top: 0.5em;
+    }
+    a {
+      text-decoration: none;
+      color: $gray;
+      margin-top: 2em;
+    }
+    &:hover {
+      color: $white;
+      img {
+          @include shadow_red;
+          transform: scale(1.05);
+      }
+      a {
+        color: $red;
+      }
+    }
+  }
+}
+
+.grid_apps {
+  display: grid;
+  align-items: center;
+  grid-template:
+    'app_description'
+    'screenshot'
+    'media'
+    'app_download';
+  .icon {
+    grid-area: icon;
+  }
+  .screenshot {
+    grid-area: screenshot;
+    .shots_hover {
+      text-align: center;
+      position: relative;
+      #fondo_screenshot_2 {
+        @include screenshots;
+        @include transition;
+      }
+      &:hover {
+        #fondo_screenshot_2 {
+          opacity: 1;
+        }
+      }
+      #luna_screenshot_2 {
+        @include screenshots;
+        @include transition;
+      }
+      &:hover {
+        #luna_screenshot_2 {
+          opacity: 1;
+        }
+      }
+    }
+    img {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  }
+  .app_description {
+    text-align: center;
+    color: $gray;
+    grid-area: app_description;
+  }
+  .app_download {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-area: app_download;
+    margin-bottom: $default-margin;
+  }
+  .app_on_media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-area: media;
+    a {
+      padding: $large-padding;
+      margin: 0 10px;
+      border-radius: 20px;
+      text-decoration: none;
+    }
+    #omg {
+      color: $omgubuntu;
+      border: 1px solid $omgubuntu;
+      margin-bottom: 20px;
+      @include transition;
+      &:hover {
+        @include shadow_red;
+      }
+    }
+    #spotlight {
+      color: $spotlight;
+      border: 1px solid $spotlight;
+      margin-bottom: 20px;
+      @include transition;
+      &:hover {
+        @include shadow_blue;
+      }
+    }
+  }
+}
+
+.footer {
+  border-radius: 60px 60px 0 0;
+  padding: $default-margin;
+  @include shadow_up;
+  h2 {
+    color: $white;
+  }
+  @include gradient($red_gradient_1, $red_gradient_2);
+  ul {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img {
+      padding: 8px;
+      border-radius: 10px;
+      border-bottom: 8px solid $transparent;
+      @include transition;
+      &:hover {
+        border-bottom: 8px solid $accent_color_border;
+        @include shadow;
+        transform: scale(1.5);
+      }
+    }
+    #link_github:hover {
+      background: $github;
+    }
+    #link_instagram:hover {
+      background: $instagram;
+    }
+    #link_twitter:hover {
+      background: $twitter;
+    }
+    #link_email:hover {
+      background: $email;
+    }
+  }
+  .madein {
+    text-align: center;
+    color: $light-gray;
+  }
+}
+
+@media (max-width: 960px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vw;
+    a {
+      font-size: 2em;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .menu_active {
+    display: flex;
+    position: fixed;
+    background: rgba($light-red, 0.95);
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    a {
+      width: 70vw;
+      padding: 10px;
+      text-align: center;
+      border-radius: 40px;
+      @include transition;
+      &:hover {
+          background: $accent_color;
+          @include shadow;
+      }
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  .about_grid {
+    min-height: 240px;
+    .about_card {
+      margin: 10px auto;
+    }
+  }
+  .grid_designs {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid_apps {
+    .screenshot {
+      img {
+        max-width: 400px;
+      }
+    }
+    .app_download {
+      flex-direction: row;
+      margin: 0 auto;
+      a{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  nav {
+    display: flex;
+    justify-content: space-around;
+    padding: $medium;
+    a {
+      color: $white;
+      font-weight: 500;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .head{
+    flex-direction: row;
+    padding: $hight 0px;
+    .greeting {
+      text-align: right;
+    }
+  }
+
+  .menu {
+    background-color: $light-red;
+    border-radius: 0 0 60px 60px;
+    @include shadow;
+    @include transition;
+    &:hover {
+      background-color: $accent_color;
+    }
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .floatingmenu {
+    display: none;
+  }
+
+  .about{
+    display: flex;
+    justify-content: center;
+    .my-logo {
+      flex-direction: row;
+    }
+    .summary {
+      margin-left: 60px;
+      text-align: start;
+    }
+  }
+
+  .about_grid {
+    .about_card {
+      max-width: 130px;
+    }
+  }
+
+  .grid_designs {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid_apps {
+    grid-template:
+      'screenshot   app_description'
+      'media        media'
+      'app_download app_download';
+  }
+
 }
