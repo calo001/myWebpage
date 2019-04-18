@@ -4,13 +4,14 @@
 
 html {
   padding: 0;
+  height: 100%;
 }
 
 body {
   font-family: 'Dosis', sans-serif;
   font-size: 1.2em;
-  background-color: white;
   margin: 0;
+  height: 100%;
 }
 
 h2 {
@@ -21,9 +22,14 @@ h2 {
   margin-top: 0;
 }
 
-footer {
-  background: $odd-gray;
+h3 {
+  text-align: center;
 }
+
+a {
+  text-decoration: none;
+}
+
 .floatingmenu img {
   max-width: 40px;
   position: fixed;
@@ -42,8 +48,40 @@ footer {
 
 .hero {
   @include gradient($red_gradient_1, $red_gradient_2);
-  border-radius: 0 0 60px 60px;
-  @include shadow_red;
+  #home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  ul {
+    display: flex;
+    margin: 10px;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    img {
+      padding: 8px;
+      border-radius: 30%;
+      @include transition;
+      @include shadow;
+      &:hover {
+        @include shadow;
+        transform: scale(1.2);
+      }
+    }
+    #link_github:hover {
+      background: $github;
+    }
+    #link_instagram:hover {
+      background: $instagram;
+    }
+    #link_twitter:hover {
+      background: $twitter;
+    }
+    #link_email:hover {
+      background: $email;
+    }
+  }
 }
 
 .container {
@@ -62,8 +100,9 @@ footer {
 .head {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: $big 0px;
+  padding: $big-padding;
   text-align: center;
   .greeting {
     display: flex;
@@ -79,6 +118,7 @@ footer {
       margin: 0;
     }
   }
+
 }
 
 .about {
@@ -91,6 +131,7 @@ footer {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       margin-bottom: $default-margin;
       .redbacklogo {
         @include transition;
@@ -126,30 +167,42 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  min-height: 280px;
   .about_card {
-    padding: $default-margin;
-    margin: 10px auto;
+    max-width: 185px;
+    padding: 10px;
     width: 300px;
     text-align: center;
+    margin: 10px auto;
     border-radius: 20px;
     @include gradient($red_gradient_1, $red_gradient_2);
     @include transition;
     figure {
-      margin: 0;
+      background: rgba(0,0,0,0.1);
+      border-radius: 50%;
+      padding: 10px;
+      @include shadow;
     }
     img {
-      margin: $about-card-margin;
+      margin: 0;
     }
     .grid_description {
         color: $white;
-        position: relative;
-        padding: $large-padding;
     }
     &:hover {
-      background: $accent_color;
       @include shadow_red;
     }
+  }
+  .ipn {
+    @include gradient(#964886, #B93D45);
+  }
+  .elementary {
+    @include gradient(#4facfe, #28CEFE);
+  }
+  .chess {
+    @include gradient(#b224ef, #8B5BF9);
+  }
+  .walk {
+    @include gradient(#16a085, #8AB960);
   }
 }
 
@@ -172,7 +225,6 @@ footer {
       margin-top: 0.5em;
     }
     a {
-      text-decoration: none;
       color: $gray;
       margin-top: 2em;
     }
@@ -195,7 +247,6 @@ footer {
   grid-template:
     'app_description'
     'screenshot'
-    'media'
     'app_download';
   .icon {
     grid-area: icon;
@@ -224,9 +275,12 @@ footer {
         }
       }
     }
-    img {
-      max-width: 280px;
-      margin: 0 auto;
+    figure {
+      margin: 0;
+      img {
+        max-width: 90vw;
+        margin: 0 auto;
+      }
     }
   }
   .app_description {
@@ -237,83 +291,60 @@ footer {
   .app_download {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
     grid-area: app_download;
     margin-bottom: $default-margin;
   }
-  .app_on_media {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    grid-area: media;
-    a {
-      padding: $large-padding;
-      margin: 0 10px;
-      border-radius: 20px;
-      text-decoration: none;
-    }
-    #omg {
-      color: $omgubuntu;
-      border: 1px solid $omgubuntu;
-      margin-bottom: 20px;
-      @include transition;
-      &:hover {
-        @include shadow_red;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .tool{
+    margin: $default-margin;
+    padding: $default-margin;
+    border-radius: 8px;
+    @include transition;
+    picture {
+      text-align: center;
+      img {
+        display: block;
+        height: 200px;
+      }
+      figcaption {
+        color: $gray;
+        font-weight: bold;
+        font-size: 1.5em;
       }
     }
-    #spotlight {
-      color: $spotlight;
-      border: 1px solid $spotlight;
-      margin-bottom: 20px;
-      @include transition;
-      &:hover {
-        @include shadow_blue;
+    &:hover {
+      background: $super-light-red;
+      picture {
+        figcaption {
+          color: $red;
+        }
       }
     }
   }
 }
 
 .footer {
-  border-radius: 60px 60px 0 0;
   padding: $default-margin;
-  @include shadow_up;
-  h2 {
-    color: $white;
-  }
-  @include gradient($red_gradient_1, $red_gradient_2);
-  ul {
-    display: flex;
-    margin: 0;
-    list-style-type: none;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    img {
-      padding: 8px;
-      border-radius: 10px;
-      border-bottom: 8px solid $transparent;
-      @include transition;
-      &:hover {
-        border-bottom: 8px solid $accent_color_border;
-        @include shadow;
-        transform: scale(1.5);
-      }
-    }
-    #link_github:hover {
-      background: $github;
-    }
-    #link_instagram:hover {
-      background: $instagram;
-    }
-    #link_twitter:hover {
-      background: $twitter;
-    }
-    #link_email:hover {
-      background: $email;
-    }
-  }
+  background: $light-gray;
   .madein {
     text-align: center;
-    color: $light-gray;
+    color: $light-red;
+    margin: 0;
+  }
+}
+
+.main_footer {
+  background: none;
+  .madein {
+    text-align: center;
+    color: $white;
+    margin-bottom: $default-margin-top;
   }
 }
 
@@ -326,7 +357,6 @@ footer {
     width: 100vw;
     a {
       font-size: 2em;
-      text-decoration: none;
       color: $white;
     }
   }
@@ -365,7 +395,7 @@ footer {
   .grid_apps {
     .screenshot {
       img {
-        max-width: 400px;
+        max-width: 700px;
       }
     }
     .app_download {
@@ -387,7 +417,6 @@ footer {
     a {
       color: $white;
       font-weight: 500;
-      text-decoration: none;
       &:hover {
         opacity: 0.8;
       }
@@ -396,10 +425,18 @@ footer {
 
   .head{
     flex-direction: row;
-    padding: $hight 0px;
     .greeting {
       text-align: right;
+      margin-top: $big-margin-top;
     }
+    .myphoto {
+        align-self: flex-end;
+    }
+  }
+
+  .hero {
+    height: 80vh;
+
   }
 
   .menu {
@@ -413,7 +450,7 @@ footer {
   }
 
   .container {
-    max-width: 800px;
+    max-width: 80vw;
     margin: 0 auto;
   }
 
@@ -421,21 +458,9 @@ footer {
     display: none;
   }
 
-  .about{
-    display: flex;
-    justify-content: center;
-    .my-logo {
-      flex-direction: row;
-    }
-    .summary {
-      margin-left: 60px;
-      text-align: start;
-    }
-  }
-
   .about_grid {
     .about_card {
-      max-width: 130px;
+
     }
   }
 
@@ -445,9 +470,23 @@ footer {
 
   .grid_apps {
     grid-template:
-      'screenshot   app_description'
-      'media        media'
-      'app_download app_download';
+      'app_description  screenshot';
+    .fondo {
+      width: 500px;
+    }
+    .luna {
+      width: 300px;
+    }
   }
+}
 
+@media (min-width: 1200px) {
+  .grid_apps {
+    .fondo {
+      width: 700px;
+    }
+    .luna {
+      width: 400px;
+    }
+  }
 }
