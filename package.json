@@ -13,8 +13,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@alienfast/i18next-loader": "^1.0.18",
     "css-loader": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
+    "i18next": "^15.0.9",
     "node-sass": "^4.11.0",
     "sass": "^1.16.1",
     "sass-loader": "^7.1.0",

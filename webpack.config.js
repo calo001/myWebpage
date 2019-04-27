@@ -39,6 +39,10 @@ module.exports = {
       {
         test: /\.jpg$/,
         loader: 'url-loader'
+      },
+      {
+        test: /locales/,
+        loader: '@lienfast/i18next-loader'
       }
     ]
   }

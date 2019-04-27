@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:200,400,500,600');
 @import 'modules/_mixins.scss';
 @import 'modules/_variables.scss';
+@import 'modules/_animations.scss';
 
 html {
   padding: 0;
@@ -12,6 +13,23 @@ body {
   font-size: 1.2em;
   margin: 0;
   height: 100%;
+}
+
+.redback {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -900;
+  @include gradient(rgba($red_gradient_1, 0.8), rgba($red_gradient_2, 0.8));
+}
+
+.photoback {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -1000;
+  background-image: url("/public/images/annie-spratt-44241-unsplash.jpg");
+  background-size: cover;
 }
 
 h2 {
@@ -36,7 +54,7 @@ a {
 }
 
 .floatingmenu img {
-  max-width: 40px;
+  max-width: 30px;
   position: fixed;
   top: $small;
   right: $small;
@@ -52,12 +70,6 @@ a {
 }
 
 .hero {
-  @include gradient($red_gradient_1, $red_gradient_2);
-  #home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   ul {
     display: flex;
     margin: 10px;
@@ -96,7 +108,6 @@ a {
 
 .separator {
   padding: $small-padding;
-
   &:nth-child(even) {
     background: $odd-gray;
   }
@@ -107,14 +118,28 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: $big-padding;
   text-align: center;
+  padding-top: $default-margin;
+  .myphoto {
+    img {
+      @include transition;
+      @include shadow;
+      border-radius: 50%;
+      &:hover {
+        @include strong_shadow;
+      }
+    }
+
+  }
   .greeting {
     display: flex;
     justify-content: center;
     flex-direction: column;
     color: $white;
     font-size: 2.5em;
+    ul {
+      padding: 0;
+    }
     .nombre {
       font-weight: bold;
       font-size: 1.3em;
@@ -208,6 +233,38 @@ a {
   }
   .walk {
     @include gradient(#16a085, #8AB960);
+  }
+}
+
+.technology_grid {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  .technology_card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: $default-margin;
+    h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    figure {
+      margin: 0;
+      img { height: 100px; }
+    }
+    .technology_info {
+      margin-left: 8px;
+      .stars {
+        display: flex;
+        img { height: 30px; }
+      }
+    }
+    &:hover {
+      background: $white;
+      @include shadow;
+    }
   }
 }
 
@@ -349,32 +406,27 @@ a {
   .madein {
     text-align: center;
     color: $white;
-    margin-bottom: $default-margin-top;
+    margin-bottom: $default-margin;
   }
 }
 
 @media (max-width: 960px) {
   nav {
-    display: none;
+    @include transition;
+    display: flex;
+    position: fixed;
+    background: rgba($red_gradient_1, 0.95);
+    z-index: 100;
+    width: 100vw;
+    justify-content: center;
+
+    transform: translateY(-100vh);
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
     a {
-      font-size: 2em;
+      font-size: 1.5em;
       color: $white;
-    }
-  }
-
-  .menu_active {
-    display: flex;
-    position: fixed;
-    background: rgba($light-red, 0.95);
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    a {
       width: 70vw;
       padding: 5px;
       text-align: center;
@@ -386,6 +438,11 @@ a {
           @include shadow;
       }
     }
+  }
+
+  .menu_active {
+    @include shadow;
+    transform: translateY(0vh);
   }
 }
 
@@ -442,8 +499,7 @@ a {
   }
 
   .hero {
-    height: 80vh;
-
+    height: 100%;
   }
 
   .menu {

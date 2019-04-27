@@ -21,3 +21,5 @@ services:
 #    command: "npm i --save-dev html-webpack-plugin"
 #    command: "npm install style-loader css-loader sass-loader node-sass --save-dev"
 #    command: "npm install node-sass --save-dev"
+#    command: "npm install i18next --save-dev"
+#    command: "npm i @alienfast/i18next-loader --save-dev"
