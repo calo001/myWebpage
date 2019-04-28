@@ -12,7 +12,7 @@ services:
       - 8080:8080
     command: "npm run start"
 #    command: ["${CMD}"]
-#    ["npm", "${RUN}", "${START}"]
+      #["npm", "${RUN}", "${START}"]
 #    command: "npm install webpack-dev-server --save-dev"
 #    command: "npm install sass --save-dev"
 #    command: "npm run dev"
