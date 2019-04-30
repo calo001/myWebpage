@@ -315,6 +315,7 @@ a {
   }
   .screenshot {
     grid-area: screenshot;
+    margin: auto;
     .shots_hover {
       text-align: center;
       position: relative;
@@ -531,19 +532,6 @@ a {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .grid_apps {
-    grid-template:
-      'app_description  screenshot';
-    .fondo {
-      width: 500px;
-    }
-    .luna {
-      width: 300px;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
   .grid_apps {
     .fondo {
       width: 700px;
