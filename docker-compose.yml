@@ -10,7 +10,7 @@ services:
       - ./:/home/carlos/Web/myWebpage/
     ports:
       - 8080:8080
-gir    command: "npm run build"
+    command: "npm run build"
 #    command: "npm run start"
 #    command: ["${CMD}"]
 #    ["npm", "${RUN}", "${START}"]
@@ -27,4 +27,3 @@ gir    command: "npm run build"
 #    command: npm install i18next-browser-languagedetector
 #    command: "npm install --save-dev mini-css-extract-plugin"
 #    command: "npm i -D webpack-merge"
-#    command: "npm i -D html-loader"
