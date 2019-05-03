@@ -22,12 +22,12 @@ i18n
           "made_with" : "Herramientas utilizadas",
 
           // Apps dscriptions
-          "luna_description" : "Un asombroso widget calendario, Selecciona un color de tema y navega a través de los meses y años con una interfaz intuitiva",
-          "fondo_description" : "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo",
+          "luna_description" : "Un asombroso widget calendario, Selecciona un color de tema y navega a través de los meses y años con una interfaz intuitiva.",
+          "fondo_description" : "Encuentra una variedad de los fondos de pantalla más increíbles de Unsplash.com la comunidad de fotógrafos más generosa del mundo.",
 
           // About
           "welcome" : "Bienvenido a mi sitio web!",
-          "my_description" : "Soy Desarrollador mexicano, recido actualemte en la Ciudad de México. Me entusiasma mucho el potencial que tiene la tecnología para crear un impacto en las personas a través de grandes y pequeños aportes al mundo.",
+          "my_description" : "Soy Carlos López Romero, desarrollador mexicano y vivo actualmente en la Ciudad de México. Me apasionan los temas de tecnología en desarrollo móvil y de escritorios linux. Estoy convencido de que se puede hacer mucho para cambiar al mundo, el primer paso es un <¡Hola mundo!>.",
           "my_overview" : "Información general",
           "overview1" : "Estudié Licenciatura en Ciencias de la informática en el IPN",
           "overview2" : "Usuario, fan y desarrollador en el AppCenter de elementary OS",
@@ -38,7 +38,7 @@ i18n
           "others" : "Otros",
 
           // Footer
-          "madein" : "Hecho en México"
+          "madein" : "Hecho en México con ❤"
         }
       },
       en: {
@@ -61,7 +61,7 @@ i18n
 
           // About
           "welcome" : "Welcome to my website!",
-          "my_description" : "I am a Mexican developer, I live in Mexico City. I am very excited about the potential of technology to create an impact on people through large and small contributions to the world.",
+          "my_description" : "I'm Carlos López Romero, a Mexican developer, I currently live in Mexico City. I'm passionate about the technology in mobile development and Linux desktops. I’m convinced that you can do a lot to change the world, the first step is a <Hello world!>.",
           "my_overview" : "An overview of me",
           "overview1" : "A graduate student from  the Computer Science at the IPN",
           "overview2" : "elementary OS user, fan and developer in AppCenter",
@@ -72,7 +72,7 @@ i18n
           "others" : "Others",
 
           // Footer
-          "madein" : "Made in Mexico"
+          "madein" : "Made in Mexico with ❤"
         }
       }
     }
@@ -124,7 +124,7 @@ function updateContent() {
 
 function translateIfExist(element, key) {
   if (element) {
-    element.innerHTML = i18n.t(key, { returnObjects: true })
+    element.innerText = i18n.t(key, { returnObjects: true })
   }
 }
 
