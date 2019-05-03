@@ -1,5 +1,7 @@
 # My personal web site: Carlos López Romero
 
+![Screenshot](https://raw.githubusercontent.com/calo001/myWebpage/master/public/Screenshot_1.png)
+
 ## Motivation
 I want to create a personal branding and have a formal way to show me to the network.
 
