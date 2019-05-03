@@ -88,25 +88,11 @@ a {
     flex-wrap: wrap;
     img {
       padding: 8px;
-      border-radius: 30%;
       @include transition;
-      @include shadow;
       &:hover {
         @include shadow;
-        transform: scale(1.2);
+        transform: scale(0.8);
       }
-    }
-    #link_github:hover {
-      background: $github;
-    }
-    #link_instagram:hover {
-      background: $instagram;
-    }
-    #link_twitter:hover {
-      background: $twitter;
-    }
-    #link_email:hover {
-      background: $email;
     }
   }
 }
