@@ -1,6 +1,12 @@
 import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+function translateIfExist(element, key) {
+  if (element) {
+    element.innerText = i18n.t(key, { returnObjects: true });
+  }
+}
+
 function updateContent() {
   // Menu
   translateIfExist(document.getElementById("s_home"), "home");
@@ -38,16 +44,10 @@ function updateContent() {
   translateIfExist(document.getElementById("s_madein"), "madein");
 }
 
-function translateIfExist(element, key) {
-  if (element) {
-    element.innerText = i18n.t(key, { returnObjects: true })
-  }
-}
-
 i18n
   .use(LanguageDetector)
   .init({
-    //lng: 'en',
+    //lng: "en",
     //debug: true,
     resources: {
       es: {
@@ -127,6 +127,6 @@ i18n
     i18n.changeLanguage(lng);
   }
 
-i18n.on('languageChanged', () => {
+i18n.on("languageChanged", () => {
   updateContent();
 });

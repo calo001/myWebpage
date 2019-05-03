@@ -28,7 +28,7 @@ module.exports = {
     path: path.join(__dirname, ".."),
     filename: "dist/javascript/bundle.js"
   },
-  mode: 'development',
+  mode: "development",
   plugins: [htmlWebpack, htmlWebpackDesigns, htmlWebpackAbout, htmlWebpackApps],
   module: {
     rules: [

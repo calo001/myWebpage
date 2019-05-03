@@ -1,4 +1,4 @@
-let lazyImages = [...document.querySelectorAll(".lazy")]
+let lazyImages = [...document.querySelectorAll(".lazy")];
 let inAdvance = 300;
 
 function lazyLoad() {
