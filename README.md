@@ -9,7 +9,7 @@ I want to create a personal branding and have a formal way to show me to the net
 
 ## Development
 I use the following technologies:
- * HTML
+*  HTML
  * Sass
  * Javascript
  * Webpack
