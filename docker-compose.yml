@@ -10,8 +10,8 @@ services:
       - ./:/home/carlos/Web/myWebpage/
     ports:
       - 8080:8080
-#    command: "npm run build"
-    command: "npm run start"
+    command: "npm run build"
+#    command: "npm run start"
 #    command: "npm update"
 #    command: "sudo npm install -g npm-check-updates"
 #    command: ["${CMD}"]
