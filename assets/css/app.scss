@@ -56,35 +56,10 @@ a {
   padding: $default-margin;
   border-radius: 10px;
   color:$white;
+  @include load_animation;
   &::after {
     content: '\ALoading';
     white-space: pre;
-  }
-
-  -webkit-animation: AnimationLazy 2s ease infinite;
-  -moz-animation: AnimationLazy 2s ease infinite;
-  -o-animation: AnimationLazy 2s ease infinite;
-  animation: AnimationLazy 2s ease infinite;
-
-  @-webkit-keyframes AnimationLazy {
-     0%{background-position:0% 50%}
-     50%{background-position:100% 50%}
-     100%{background-position:0% 50%}
-  }
-  @-moz-keyframes AnimationLazy {
-     0%{background-position:0% 50%}
-     50%{background-position:100% 50%}
-     100%{background-position:0% 50%}
-  }
-  @-o-keyframes AnimationLazy {
-     0%{background-position:0% 50%}
-     50%{background-position:100% 50%}
-     100%{background-position:0% 50%}
-  }
-  @keyframes AnimationLazy {
-     0%{background-position:0% 50%}
-     50%{background-position:100% 50%}
-     100%{background-position:0% 50%}
   }
 }
 

@@ -1,8 +1,7 @@
 # Notas del proyecto
 
 ## Docker
-* docker-compose up
-
+  * docker-compose up
 
 ## Node
-+ npm run command-in-package.json
+  * npm run command-in-package.json

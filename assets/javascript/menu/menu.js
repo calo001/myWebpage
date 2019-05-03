@@ -4,7 +4,7 @@ document.querySelector(".floatingmenu").onclick = function(){
 };
 
 let elementsMenu = document.querySelectorAll(".menu_active a");
-elementsMenu.forEach( (el)=> {
+elementsMenu.forEach( (el) => {
   el.onclick = function(){
     menuActive.classList.remove("menu_active");
   };

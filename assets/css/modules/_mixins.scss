@@ -12,6 +12,13 @@
   transition: all 0.3s ease-out;
 }
 
+@mixin load_animation {
+  -webkit-animation: AnimationLazy 2s ease infinite;
+  -moz-animation: AnimationLazy 2s ease infinite;
+  -o-animation: AnimationLazy 2s ease infinite;
+  animation: AnimationLazy 2s ease infinite;
+}
+
 @mixin shadow {
   box-shadow: 0 14px 28px rgba(0,0,0,0.06), 0 10px 10px rgba(0,0,0,0.04);
 }

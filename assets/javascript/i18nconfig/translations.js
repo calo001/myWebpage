@@ -1,5 +1,48 @@
-import i18n from 'i18next'
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+
+function updateContent() {
+  // Menu
+  translateIfExist(document.getElementById("s_home"), "home");
+  translateIfExist(document.getElementById("s_about"), "about_me");
+  translateIfExist(document.getElementById("s_design"), "my_designs");
+  translateIfExist(document.getElementById("s_apps"), "my_apps");
+
+  // Index page
+  translateIfExist(document.getElementById("s_greet"), "greet");
+
+  // Designs
+  translateIfExist(document.getElementById("s_h2_designs"), "my_designs");
+  translateIfExist(document.getElementById("s_design_made_with"), "made_with");
+
+  // Apps
+  translateIfExist(document.getElementById("s_h2_apps"), "my_apps");
+  translateIfExist(document.getElementById("s_apps_made_with"), "made_with");
+  translateIfExist(document.getElementById("s_luna_description"), "luna_description");
+  translateIfExist(document.getElementById("s_fondo_description"), "fondo_description");
+
+  // About
+  translateIfExist(document.getElementById("s_h2_about"), "about_me");
+  translateIfExist(document.getElementById("s_welcome"), "welcome");
+  translateIfExist(document.getElementById("s_my_description"), "my_description");
+  translateIfExist(document.getElementById("s_my_overview"), "my_overview");
+  translateIfExist(document.getElementById("s_overview1"), "overview1");
+  translateIfExist(document.getElementById("s_overview2"), "overview2");
+  translateIfExist(document.getElementById("s_overview3"), "overview3");
+  translateIfExist(document.getElementById("s_overview4"), "overview4");
+  translateIfExist(document.getElementById("s_it_experience"), "it_experience");
+  translateIfExist(document.getElementById("s_prog_lang"), "prog_lang");
+  translateIfExist(document.getElementById("s_others"), "others");
+
+  // Footer section
+  translateIfExist(document.getElementById("s_madein"), "madein");
+}
+
+function translateIfExist(element, key) {
+  if (element) {
+    element.innerText = i18n.t(key, { returnObjects: true })
+  }
+}
 
 i18n
   .use(LanguageDetector)
@@ -77,60 +120,12 @@ i18n
       }
     }
   }, function(err, t) {
-    // init set content
     updateContent();
   });
 
-function updateContent() {
-  //document.getElementsByClassName('nombre').innerHTML = i18n.t('key');
-  //let element = document.getElementById('s_home');
-  //console.log(element);
-  // Menu
-  translateIfExist(document.getElementById('s_home'), 'home');
-  translateIfExist(document.getElementById('s_about'), 'about_me');
-  translateIfExist(document.getElementById('s_design'), 'my_designs');
-  translateIfExist(document.getElementById('s_apps'), 'my_apps');
-
-  // Index page
-  translateIfExist(document.getElementById('s_greet'), 'greet');
-
-  // Designs
-  translateIfExist(document.getElementById('s_h2_designs'), 'my_designs');
-  translateIfExist(document.getElementById('s_design_made_with'), 'made_with');
-
-  // Apps
-  translateIfExist(document.getElementById('s_h2_apps'), 'my_apps');
-  translateIfExist(document.getElementById('s_apps_made_with'), 'made_with');
-  translateIfExist(document.getElementById('s_luna_description'), 'luna_description');
-  translateIfExist(document.getElementById('s_fondo_description'), 'fondo_description');
-
-  // About
-  translateIfExist(document.getElementById('s_h2_about'), 'about_me');
-  translateIfExist(document.getElementById('s_welcome'), 'welcome');
-  translateIfExist(document.getElementById('s_my_description'), 'my_description');
-  translateIfExist(document.getElementById('s_my_overview'), 'my_overview');
-  translateIfExist(document.getElementById('s_overview1'), 'overview1');
-  translateIfExist(document.getElementById('s_overview2'), 'overview2');
-  translateIfExist(document.getElementById('s_overview3'), 'overview3');
-  translateIfExist(document.getElementById('s_overview4'), 'overview4');
-  translateIfExist(document.getElementById('s_it_experience'), 'it_experience');
-  translateIfExist(document.getElementById('s_prog_lang'), 'prog_lang');
-  translateIfExist(document.getElementById('s_others'), 'others');
-
-  // Footer section
-  translateIfExist(document.getElementById('s_madein'), 'madein');
-
-}
-
-function translateIfExist(element, key) {
-  if (element) {
-    element.innerText = i18n.t(key, { returnObjects: true })
+  function changeLng(lng) {
+    i18n.changeLanguage(lng);
   }
-}
-
-function changeLng(lng) {
-  i18n.changeLanguage(lng);
-}
 
 i18n.on('languageChanged', () => {
   updateContent();
