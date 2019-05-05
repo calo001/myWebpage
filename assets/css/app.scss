@@ -117,9 +117,6 @@ a {
   text-align: center;
   padding-top: $default-margin;
   .myphoto {
-    figure {
-      margin: 20px 0;
-    }
     img {
       @include transition;
       @include shadow;
