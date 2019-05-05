@@ -117,6 +117,9 @@ a {
   text-align: center;
   padding-top: $default-margin;
   .myphoto {
+    figure {
+      margin: 20px 0;
+    }
     img {
       @include transition;
       @include shadow;
@@ -401,15 +404,30 @@ a {
     text-align: center;
     color: $light-red;
     margin: 0 20px;
+    font-size: 1.1em;
   }
 }
 
 .main_footer {
   background: none;
+  margin: 0 20px;
   .madein {
     text-align: center;
     color: $white;
-    margin: 0 20px;
+    font-size: 1.1em;
+    margin-bottom: $default-margin;
+    overflow: hidden;
+  }
+  .photo_from {
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: $white;
+    }
+    font-size: 0.7em;
+    opacity: 0.7;
+    text-align: center;
+    color: $white;
     margin-bottom: $default-margin;
   }
 }

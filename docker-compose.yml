@@ -14,12 +14,8 @@ services:
 #    command: "npm run start"
 #    command: "npm update"
 #    command: "sudo npm install -g npm-check-updates"
-#    command: ["${CMD}"]
-#    ["npm", "${RUN}", "${START}"]
 #    command: "npm install webpack-dev-server --save-dev"
 #    command: "npm install sass --save-dev"
-#    command: "npm run dev"
-#    command: "npm run build" #For production
 #    command: "npm i terser@3.14 --save-dev"
 #    command: "npm i --save-dev html-webpack-plugin"
 #    command: "npm install style-loader css-loader sass-loader node-sass --save-dev"

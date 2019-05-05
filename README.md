@@ -15,5 +15,9 @@ I use the following technologies:
 * Webpack
 * NodeJs
 
+## Docker
+I use a nodejs docker image to develop, use this command in project directory to test in a server (port 8080)
+* ```docker-compose up```
+
 ## Issues
 Write me a issue in [issues](https://github.com/calo001/myWebpage/issues)

@@ -42,6 +42,9 @@ function updateContent() {
 
   // Footer section
   translateIfExist(document.getElementById("s_madein"), "madein");
+  translateIfExist(document.getElementById("s_photo_by"), "photo_by");
+  translateIfExist(document.getElementById("s_on"), "on");
+
 }
 
 i18n
@@ -81,7 +84,9 @@ i18n
           "others" : "Otros",
 
           // Footer
-          "madein" : "Hecho en México con ❤"
+          "madein" : "Hecho en México con ❤",
+          "photo_by" : "Foto por ",
+          "on" : " en "
         }
       },
       en: {
@@ -115,7 +120,9 @@ i18n
           "others" : "Others",
 
           // Footer
-          "madein" : "Made in Mexico with ❤"
+          "madein" : "Made in Mexico with ❤",
+          "photo_by" : "Photo by ",
+          "on" : " on "
         }
       }
     }
