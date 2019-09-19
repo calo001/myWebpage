@@ -9,58 +9,58 @@ function translateIfExist(element, key) {
 
 function updateContent() {
   // Index page
-  translateIfExist(document.getElementById("s_myresume"), "myresume")
-  translateIfExist(document.getElementById("s_buymecoffe"), "buymecoffe")
-  translateIfExist(document.getElementById("s_myapplications"), "myapplications")
-  translateIfExist(document.getElementById("s_mydesigns"), "mydesigns")
-  translateIfExist(document.getElementById("s_aboutme"), "aboutme")
+  translateIfExist(document.getElementById("s_myresume"), "myresume");
+  translateIfExist(document.getElementById("s_buymecoffe"), "buymecoffe");
+  translateIfExist(document.getElementById("s_myapplications"), "myapplications");
+  translateIfExist(document.getElementById("s_mydesigns"), "mydesigns");
+  translateIfExist(document.getElementById("s_aboutme"), "aboutme");
 
   // Applications page
-  translateIfExist(document.getElementById("s_applications"), "applications")
-  translateIfExist(document.getElementById("s_fondoandroid"), "fondoandroid")
-  translateIfExist(document.getElementById("s_fondoandroiddesc"), "fondoandroiddesc")
-  translateIfExist(document.getElementById("s_fondolinux"), "fondolinux")
-  translateIfExist(document.getElementById("s_fondolinuxdesc"), "fondolinuxdesc")
-  translateIfExist(document.getElementById("s_luna"), "luna")
-  translateIfExist(document.getElementById("s_luna_desc"), "luna_desc")
+  translateIfExist(document.getElementById("s_applications"), "applications");
+  translateIfExist(document.getElementById("s_fondoandroid"), "fondoandroid");
+  translateIfExist(document.getElementById("s_fondoandroiddesc"), "fondoandroiddesc");
+  translateIfExist(document.getElementById("s_fondolinux"), "fondolinux");
+  translateIfExist(document.getElementById("s_fondolinuxdesc"), "fondolinuxdesc");
+  translateIfExist(document.getElementById("s_luna"), "luna");
+  translateIfExist(document.getElementById("s_luna_desc"), "luna_desc");
 
   // My description
-  translateIfExist(document.getElementById("s_mydescription"), "mydescription")
-  translateIfExist(document.getElementById("s_experience"), "experience")
-  translateIfExist(document.getElementById("s_myexperiencedesc"), "myexperiencedesc")
-  translateIfExist(document.getElementById("s_exp_1"), "exp_1")
-  translateIfExist(document.getElementById("s_exp_2"), "exp_2")
-  translateIfExist(document.getElementById("s_exp_3"), "exp_3")
-  translateIfExist(document.getElementById("s_loveelementary"), "loveelementary")
-  translateIfExist(document.getElementById("s_loveelementarydesc"), "loveelementarydesc")
-  translateIfExist(document.getElementById("s_meandroid"), "meandroid")
-  translateIfExist(document.getElementById("s_meandroiddescrp1"), "meandroiddescrp1")
-  translateIfExist(document.getElementById("s_meandroiddescrp2"), "meandroiddescrp2")
-  translateIfExist(document.getElementById("s_othernkow"), "othernkow")
-  translateIfExist(document.getElementById("s_othernkowdesc"), "othernkowdesc")
+  translateIfExist(document.getElementById("s_mydescription"), "mydescription");
+  translateIfExist(document.getElementById("s_experience"), "experience");
+  translateIfExist(document.getElementById("s_myexperiencedesc"), "myexperiencedesc");
+  translateIfExist(document.getElementById("s_exp_1"), "exp_1");
+  translateIfExist(document.getElementById("s_exp_2"), "exp_2");
+  translateIfExist(document.getElementById("s_exp_3"), "exp_3");
+  translateIfExist(document.getElementById("s_loveelementary"), "loveelementary");
+  translateIfExist(document.getElementById("s_loveelementarydesc"), "loveelementarydesc");
+  translateIfExist(document.getElementById("s_meandroid"), "meandroid");
+  translateIfExist(document.getElementById("s_meandroiddescrp1"), "meandroiddescrp1");
+  translateIfExist(document.getElementById("s_meandroiddescrp2"), "meandroiddescrp2");
+  translateIfExist(document.getElementById("s_othernkow"), "othernkow");
+  translateIfExist(document.getElementById("s_othernkowdesc"), "othernkowdesc");
 
   // Support
-  translateIfExist(document.getElementById("s_buymecoffetitle"), "buymecoffetitle")
-  translateIfExist(document.getElementById("s_thanks"), "thanks")
-  translateIfExist(document.getElementById("s_helpdescrp"), "helpdescrp")
-  translateIfExist(document.getElementById("s_support1"), "support1")
-  translateIfExist(document.getElementById("s_support2"), "support2")
-  translateIfExist(document.getElementById("s_support3"), "support3")
-  translateIfExist(document.getElementById("s_support4"), "support4")
-  translateIfExist(document.getElementById("s_supportend"), "supportend")
+  translateIfExist(document.getElementById("s_buymecoffetitle"), "buymecoffetitle");
+  translateIfExist(document.getElementById("s_thanks"), "thanks");
+  translateIfExist(document.getElementById("s_helpdescrp"), "helpdescrp");
+  translateIfExist(document.getElementById("s_support1"), "support1");
+  translateIfExist(document.getElementById("s_support2"), "support2");
+  translateIfExist(document.getElementById("s_support3"), "support3");
+  translateIfExist(document.getElementById("s_support4"), "support4");
+  translateIfExist(document.getElementById("s_supportend"), "supportend");
 
   // Footer section
-  translateIfExist(document.getElementById("s_madein"), "madein")
-  translateIfExist(document.getElementById("s_photo_by"), "photo_by")
-  translateIfExist(document.getElementById("s_on"), "on")
+  translateIfExist(document.getElementById("s_madein"), "madein");
+  translateIfExist(document.getElementById("s_photo_by"), "photo_by");
+  translateIfExist(document.getElementById("s_on"), "on");
 
 }
 
 i18n
   .use(LanguageDetector)
   .init({
-    lng: "es",
-    debug: true,
+    //lng: "es",
+    //debug: true,
     resources: {
       es: {
         translation: {
