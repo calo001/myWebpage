@@ -13,6 +13,7 @@ services:
 #    command: "npm run build"
     command: "npm run start"
 #    command: "npm update"
+#    command: "npm audit fix"
 #    command: "sudo npm install -g npm-check-updates"
 #    command: "npm install webpack-dev-server --save-dev"
 #    command: "npm install sass --save-dev"
