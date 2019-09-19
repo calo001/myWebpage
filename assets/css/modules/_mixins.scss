@@ -1,3 +1,30 @@
+@mixin default_shadow {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+@mixin strong_shadow {
+  box-shadow: 0 19px 32px rgba(0,0,0, 0.3), 0 15px 15px rgba(0,0,0, 0.2);
+}
+
+@mixin transition {
+  transition: all 0.3s ease-out;
+}
+
+@mixin hover_anim {
+  @include transition;
+  &:hover {
+    @include strong_shadow;
+    transform: scale(0.95);
+  }
+}
+
+@mixin hover_simple {
+  @include transition;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
 @mixin gradient($from, $to) {
   background: $from;
   background: -moz-linear-gradient(left, $from 0%, $to 100%);
@@ -6,40 +33,4 @@
   background: -o-linear-gradient(left, $from 0%, $to 100%);
   background: -ms-linear-gradient(left, $from 0%, $to 100%);
   background: linear-gradient(to right, $from 0%, $to 100%);
-}
-
-@mixin transition {
-  transition: all 0.3s ease-out;
-}
-
-@mixin load_animation {
-  -webkit-animation: AnimationLazy 2s ease infinite;
-  -moz-animation: AnimationLazy 2s ease infinite;
-  -o-animation: AnimationLazy 2s ease infinite;
-  animation: AnimationLazy 2s ease infinite;
-}
-
-@mixin shadow {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.06), 0 10px 10px rgba(0,0,0,0.04);
-}
-
-@mixin strong_shadow {
-  box-shadow: 0 19px 32px rgba($accent_color, 0.3), 0 15px 15px rgba($accent_color, 0.2);
-}
-
-@mixin shadow_red {
-  box-shadow: 0 14px 28px rgba(255,0,0,0.1), 0 10px 10px rgba(255,0,0,0.08);
-}
-
-@mixin shadow_blue {
-  box-shadow: 0 14px 28px rgba(0,0,255,0.1), 0 10px 10px rgba(0,0,255,0.08);
-}
-
-@mixin screenshots {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  right: 0;
-  overflow: hidden;
 }

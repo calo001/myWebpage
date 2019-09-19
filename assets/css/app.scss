@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Dosis:200,400,500,600');
 @import 'modules/_mixins.scss';
 @import 'modules/_variables.scss';
 @import 'modules/_animations.scss';
@@ -9,553 +8,413 @@ html {
 }
 
 body {
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.2em;
+  font-family: sans-serif;
+  color: $white;
   margin: 0;
   height: 100%;
+  background: $background;
 }
 
-.redback {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -900;
-  @include gradient(rgba($red_gradient_1, 0.8), rgba($red_gradient_2, 0.8));
+nav {
+  display: flex;
+  justify-content: space-between !important;
+  a{
+    margin: $default_margin;
+  }
+  .media {
+    margin: $default_margin;
+  }
 }
 
-.photoback {
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  z-index: -1000;
-  background-image: url("/public/images/annie-spratt-44241-unsplash.jpg");
-  background-size: cover;
+footer {
+  color: $white;
+  text-align: center;
+  font-size: 0.8em;
+  margin-bottom: $space_between_sections;
+}
+
+section {
+  margin-bottom: $space_between_sections;
+}
+
+h1 {
+  margin-top: 0.5em;
 }
 
 h2 {
-  color: $red;
-  font-weight: normal;
-  font-size: 1.8em;
-  text-align: center;
-  margin-top: 0;
+  font-size: 2em;
+  font-weight: bold;
+  margin: $default_padding;
 }
 
 h3 {
-  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 0;
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
-.lazy {
-  background: linear-gradient(92deg, #e94141, #f1d13a);
-  background-size: 200% 200%;
-  width: 150px;
-  height: 150px;
-  padding: $default-margin;
-  border-radius: 10px;
-  color:$white;
-  @include load_animation;
-  &::after {
-    content: '\ALoading';
-    white-space: pre;
-  }
-}
-
-.floatingmenu img {
-  max-width: 30px;
-  position: fixed;
-  top: $small;
-  right: $small;
-  background-color: $light-red;
-  padding: $small;
-  border-radius: 50%;
-  z-index: 200;
-  @include shadow;
-  @include transition;
-  &:hover {
-    background-color: $accent_color
-  }
-}
-
-.hero {
-  ul {
-    display: flex;
-    margin: 10px;
-    list-style-type: none;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    img {
-      padding: 8px;
-      @include transition;
-      &:hover {
-        @include shadow;
-        transform: scale(0.8);
-      }
-    }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: $light_gray;
+  li {
+    margin: $default_small_margin;
+    padding: $default_small_padding;
+    border: 1px solid $darker_gray;
+    border-radius: $default_border_radius;
   }
 }
 
 .container {
-  max-width: 100vw;
+    max-width: 90vw;
+    margin: 0 auto
+}
+
+.profile_card {
+  max-width: $profile_default_width;
+  border-radius: $default_border_radius;
+  background: $white;
   margin: 0 auto;
-}
-
-.separator {
-  padding: $small-padding;
-  &:nth-child(even) {
-    background: $odd-gray;
-  }
-}
-
-.head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding-top: $default-margin;
-  .myphoto {
-    img {
-      @include transition;
-      @include shadow;
-      border-radius: 50%;
-      &:hover {
-        @include strong_shadow;
-      }
-    }
-
-  }
-  .greeting {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    color: $white;
-    font-size: 2.5em;
-    ul {
-      padding: 0;
-    }
-    .nombre {
-      font-weight: bold;
-      font-size: 1.3em;
-    }
-    p{
-      margin: 0;
-    }
-  }
-
-}
-
-.about {
-    text-align: center;
-    .summary {
-      margin: 0 20px;
-      margin-top: 2.5em;
-      color: $gray;
-    }
-    .my-logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: $default-margin;
-      .redbacklogo {
-        @include transition;
-        width: 230px;
-        height: 230px;
-        border-radius: 40px;
-        @include gradient($red_gradient_1, $red_gradient_2);
-        @include shadow;
-      }
-      .backlogo {
-        @include transition;
-        width: 230px;
-        height: 230px;
-        background: $light-gray;
-        display: flex;
-        justify-content: center;
-        border-radius: 40px;
-        transform: translate(20px, 20px);
-        @include shadow;
-      }
-      .logo:hover {
-        .redbacklogo {
-          transform: translate(-15px);
-        }
-        .backlogo {
-          transform: translate(50px, 20px);
-        }
-      }
-    }
-}
-
-.about_grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  .about_card {
-    max-width: 185px;
-    padding: 10px;
-    width: 300px;
-    text-align: center;
-    margin: 10px auto;
-    border-radius: 20px;
-    @include gradient($red_gradient_1, $red_gradient_2);
-    @include transition;
-    figure {
-      background: rgba(0,0,0,0.1);
-      border-radius: 50%;
-      padding: 10px;
-      @include shadow;
-    }
-    img {
-      margin: 0;
-    }
-    .grid_description {
-        color: $white;
-    }
-    &:hover {
-      @include shadow_red;
-    }
-  }
-  .ipn {
-    @include gradient(#964886, #B93D45);
-  }
-  .elementary {
-    @include gradient(#4facfe, #28CEFE);
-  }
-  .chess {
-    @include gradient(#b224ef, #8B5BF9);
-  }
-  .walk {
-    @include gradient(#16a085, #8AB960);
-  }
-}
-
-.technology_grid {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  .technology_card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    overflow: hidden;
-    padding: $default-margin;
-    h4 {
-      margin-top: 0;
-      margin-bottom: 8px;
-    }
-    figure {
-      margin: 0;
-      img {
-        @include transition;
-        height: 100px;
-      }
-    }
-    .technology_info {
-      margin-left: 16px;
-      .stars {
-        display: flex;
-        img { height: 20px; }
-      }
-    }
-    &:hover {
-      background: $white;
-      @include shadow;
-    }
-  }
-}
-
-.grid_designs {
-  width: 100%;
-  display: inline-grid;
-  grid-row-gap: 1em;
-  grid-template-columns: 1fr;
-  .design {
-    text-align: center;
-    img {
-      border-radius: 20px;
-      @include transition;
-    }
-    figure {
-      margin: 0;
-    }
-    figcaption {
-      text-align: center;
-      margin-top: 0.5em;
-    }
-    a {
-      color: $gray;
-      margin-top: 2em;
-    }
-    &:hover {
-      color: $white;
-      img {
-          @include shadow_red;
-          transform: scale(1.05);
-      }
-      a {
-        color: $red;
-      }
-    }
-  }
-}
-
-.grid_apps {
   display: grid;
-  align-items: center;
-  grid-template:
-    'app_description'
-    'screenshot'
-    'app_download';
-  .icon {
-    grid-area: icon;
+  grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+  @include default_shadow;
+  @include transition;
+  &:hover {
+    @include strong_shadow;
   }
-  .screenshot {
-    grid-area: screenshot;
-    margin: auto;
-    .shots_hover {
-      text-align: center;
-      position: relative;
-      #fondo_screenshot_2 {
-        @include screenshots;
-        @include transition;
-      }
-      &:hover {
-        #fondo_screenshot_2 {
-          opacity: 1;
-        }
-      }
-      #luna_screenshot_2 {
-        @include screenshots;
-        @include transition;
-      }
-      &:hover {
-        #luna_screenshot_2 {
-          opacity: 1;
-        }
-      }
-    }
-    figure {
-      margin: 0;
-      img {
-        max-width: 90vw;
-        margin: 0 auto;
-      }
-    }
-  }
-  .app_description {
-    margin: 0 20px;
-    text-align: center;
-    color: $gray;
-    grid-area: app_description;
-  }
-  .app_download {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    grid-area: app_download;
-    margin-bottom: $default-margin;
-  }
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  .tool{
-    margin: $default-margin;
-    padding: $default-margin;
-    border-radius: 8px;
-    @include transition;
-    picture {
-      text-align: center;
-      img {
-        display: block;
-        height: 200px;
-      }
-      figcaption {
-        color: $gray;
-        font-weight: bold;
-        font-size: 1.5em;
-      }
-    }
-    &:hover {
-      background: $super-light-red;
-      picture {
-        figcaption {
-          color: $red;
-        }
-      }
-    }
-  }
-}
-
-.footer {
-  padding: $default-margin;
-  background: $light-gray;
-  .madein {
-    text-align: center;
-    color: $light-red;
-    margin: 0 20px;
-    font-size: 1.1em;
-  }
-}
-
-.main_footer {
-  background: none;
-  margin: 0 20px;
-  .madein {
-    text-align: center;
-    color: $white;
-    font-size: 1.1em;
-    margin-bottom: $default-margin;
-    overflow: hidden;
-  }
-  .photo_from {
-    a {
-      text-decoration: none;
-      font-weight: bold;
-      color: $white;
-    }
-    font-size: 0.7em;
-    opacity: 0.7;
-    text-align: center;
-    color: $white;
-    margin-bottom: $default-margin;
-  }
-}
-
-@media (max-width: 960px) {
-  nav {
-    @include transition;
-    display: flex;
-    position: fixed;
-    background: rgba($red_gradient_1, 0.95);
-    z-index: 100;
-    width: 100vw;
-    justify-content: center;
-
-    transform: translateY(-100vh);
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    a {
-      font-size: 1.5em;
-      color: $white;
-      width: 70vw;
-      padding: 5px;
-      text-align: center;
-      border-radius: 40px;
-      margin: 15px;
-      @include transition;
-      &:hover {
-          background: $accent_color;
-          @include shadow;
-      }
-    }
-  }
-
-  .menu_active {
-    @include shadow;
-    transform: translateY(0vh);
-  }
-}
-
-@media (min-width: 540px) {
-  .about_grid {
-    min-height: 240px;
-    .about_card {
-      margin: 10px auto;
-    }
-  }
-  .grid_designs {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid_apps {
-    .screenshot {
-      img {
-        max-width: 700px;
-      }
-    }
-    .app_download {
-      flex-direction: row;
-      margin: 0 auto;
-      a{
-        margin-left: 10px;
-        margin-right: 10px;
-      }
-    }
-  }
-}
-
-@media (min-width: 960px) {
-  nav {
-    display: flex;
-    justify-content: space-around;
-    padding: $medium;
-    a {
-      color: $white;
-      font-weight: 500;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-  }
-
-  .head{
-    flex-direction: row;
-    .greeting {
-      text-align: right;
-      margin-top: $big-margin-top;
-    }
-    .myphoto {
-        align-self: flex-end;
-    }
-  }
-
-  .hero {
+  #profile_back {
+    width: 100%;
     height: 100%;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    img {
+      border-radius: $default_border_radius
+                     $default_border_radius 0 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  #profile_picture {
+    margin: 0 auto;
+    grid-column: 1;
+    grid-row: 2 / 4;
+    img {
+      height: 160px;
+      border-radius: $circular_radius;
+      @include default_shadow;
+    }
+  }
+  #profile_info {
+    padding-left: $default_padding;
+    padding-right: $default_padding;
+    padding-bottom: $default_padding;
+    grid-column: 1;
+    grid-row: 4 / 5;
+    text-align: center;
+    color: $darker_gray;
   }
 
-  .menu {
-    background-color: $light-red;
-    border-radius: 0 0 60px 60px;
-    @include shadow;
-    @include transition;
-    &:hover {
-      background-color: $accent_color;
+  #btn_donations {
+      border-radius: $default_border_radius;
+      border: none;
+      padding: $default_small_padding;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9em;
+      background: $darker_gray;
+      @include hover_simple;
+  }
+}
+
+.my_menu {
+  display: grid;
+  grid-template: "apps apps" "desings desings" "about about" "me1 me2" "me3 me4";
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  div {
+    @include default_shadow;
+    border-radius: $default_border_radius;
+  }
+}
+
+#applications {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  grid-area: apps;
+}
+
+#designs {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  grid-area: desings;
+}
+
+#about {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  grid-area: about;
+}
+
+#ipn {
+  width: 100%;
+  height: 100%;
+  background: $dark_gray;
+  grid-area: me1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 60px;
+  }
+}
+
+#elementary {
+  width: 100%;
+  height: 100%;;
+  background: $dark_gray;
+  grid-area: me2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 60px;
+  }
+}
+
+#chess {
+  width: 100%;
+  height: 100%;;
+  background: $dark_gray;
+  grid-area: me3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 60px;
+  }
+}
+
+#walk {
+  width: 100%;
+  height: 100%;;
+  background: $dark_gray;
+  grid-area: me4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: 60px;
+  }
+}
+
+.area_clickeable {
+  background: $darker_gray;
+  @include hover_anim;
+  figure {
+    width: 100%;
+    max-height: 300px;
+    margin: 0;
+    img {
+      width: 100%;
+      max-height: 300px;
     }
+  }
+}
+
+// Applications page
+
+.list_grid {
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  text-align: center;
+  .area_info {
+    position: relative;
+    overflow: hidden;
+    padding-top: $default_padding;
+    padding-left: $default_padding;
+    padding-right: $default_padding;
+    display: grid;
+    grid-template: "app_name"
+                   "app_description"
+                   "app_links"
+                   "app_screen";
+    @include default_shadow;
+    border-radius: $default_border_radius;
+
+    .app_name {
+      grid-area: app_name;
+    }
+
+    .app_description {
+      grid-area: app_description;
+      color: $light_gray;
+    }
+
+    .app_links {
+      grid-area: app_links;
+      img {
+        padding-bottom: $default_margin;
+        @include hover_simple;
+      }
+    }
+
+    .app_screen {
+      margin: 0;
+      grid-area: app_screen;
+      img {
+        max-width: 280px;
+      }
+    }
+
+    .github_corder {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include hover_simple;
+    }
+  }
+}
+
+
+// About
+.list_grid {
+  .my_description {
+    display: grid;
+    grid-template: "picture" "description";
+    grid-gap: 1em;
+    padding: $default_padding;
+
+    .my_image {
+      margin: 0 auto;
+      grid-column: 1;
+      grid-row: 2 / 4;
+      img {
+        height: 160px;
+        border-radius: $circular_radius;
+        @include default_shadow;
+      }
+      grid-area: picture;
+    }
+
+    .card_description {
+      grid-area: description;
+    }
+  }
+
+  .my_info {
+    padding: $default_padding;
+    .logos {
+      img {
+        margin: $default_margin;
+      }
+    }
+  }
+
+}
+
+// Support
+  .support_grid {
+    display: grid;
+    grid-gap: 1em;
+    grid-template: "patreon"
+                   "paypalme"
+                   "thanks_msg";
+    .area_info {
+      padding: $default_padding;
+      @include default_shadow;
+      border-radius: $default_border_radius;
+    }
+
+    #patreon {
+      grid-area: patreon;
+      img {
+        @include hover_simple;
+        border-radius: $default_border_radius;
+      }
+    }
+
+    #paypalme {
+      grid-area: paypalme;
+      img {
+          @include hover_simple;
+          border-radius: $default_border_radius;
+      }
+    }
+
+    #thanks_msg {
+      grid-area: thanks_msg;
+    }
+  }
+
+@media (min-width: 1024px) {
+  nav {
+    justify-content: flex-end;
+  }
+
+  ul {
+    padding: 1em;
   }
 
   .container {
-    max-width: 80vw;
-    margin: 0 auto;
+    max-width: 1024px;
   }
 
-  .floatingmenu {
-    display: none;
+  .my_menu {
+    grid-template: "apps apps  desings  desings"
+                   "me1  about about    me2"
+                   "me3  about about    me4"
   }
 
-  .about_grid {
-    .about_card {
-
+  #about {
+    min-height: 400px;
+    figure > img {
+      min-height: 400px;
     }
   }
 
-  .grid_designs {
-    grid-template-columns: 1fr 1fr 1fr;
+  // Application page
+
+  .list_grid {
+    .area_info {
+      text-align: left;
+      grid-template: "app_name        app_screen"
+                     "app_description app_screen"
+                     "app_links       app_screen"
+                     ".               app_screen";
+    .app_screen {
+      margin: 0;
+      grid-area: app_screen;
+      text-align: center;
+      img {
+        max-width: 450px;
+        }
+      }
+    }
   }
 
-  .grid_apps {
-    .fondo {
-      width: 700px;
+  // About
+  .list_grid {
+    .my_description {
+      grid-template: "picture description";
     }
-    .luna {
-      width: 400px;
-    }
+  }
+
+  // Support
+  .support_grid {
+    display: grid;
+    grid-gap: 1em;
+    grid-template: "patreon    paypalme"
+                   "thanks_msg thanks_msg";
+
   }
 }

@@ -6,9 +6,9 @@ const htmlWebpack = new HtmlWebpackPlugin({
   filename: "index.html"
 });
 
-const htmlWebpackDesigns = new HtmlWebpackPlugin({
-  template: "./assets/designs.template.html",
-  filename: "designs.html"
+const htmlWebpackApplications = new HtmlWebpackPlugin({
+  template: "./assets/applications.template.html",
+  filename: "applications.html"
 });
 
 const htmlWebpackAbout = new HtmlWebpackPlugin({
@@ -16,9 +16,9 @@ const htmlWebpackAbout = new HtmlWebpackPlugin({
   filename: "about.html"
 });
 
-const htmlWebpackApps = new HtmlWebpackPlugin({
-  template: "./assets/apps.template.html",
-  filename: "apps.html"
+const htmlWebpackSupport = new HtmlWebpackPlugin({
+  template: "./assets/support.template.html",
+  filename: "support.html"
 });
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
     filename: "dist/javascript/bundle.js"
   },
   mode: "development",
-  plugins: [htmlWebpack, htmlWebpackDesigns, htmlWebpackAbout, htmlWebpackApps],
+  plugins: [htmlWebpack, htmlWebpackApplications, htmlWebpackAbout, htmlWebpackSupport],
   module: {
     rules: [
       {

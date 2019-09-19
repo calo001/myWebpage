@@ -1,34 +1,23 @@
+// My web page V2
+$background: #333333;
+
+// Sizes
+
+$default_small_margin: 8px;
+$default_margin: 16px;
+$default_small_padding: 8px;
+$default_padding: 16px;
+$default_border_radius: 8px;
+$circular_radius: 50%;
+
+// Profile Sizes
+$profile_picture_size: 170px;
+$profile_default_height: 170px;
+$profile_default_width: 400px;
+$space_between_sections: 64px;
+
 // Colors
-$red: #FE091F;
-$gray: #8D8D8D;
-$odd-gray: #FAFAFA;
-$light-red: #F3624C;
 $white: #FFF;
-$black: #000;
-$light-gray: rgba(240, 240, 240, 0.95);
-$super-light-red: rgba(255, 0, 0, 0.1);
-$transparent: rgba(0, 0, 0, 0);
-$accent_color: #FF6F20;
-$accent_color_border: rgba(0, 0, 0, 0.15);
-$red_gradient_1: #F85032;
-$red_gradient_2: #E73827;
-
-// Fonts
-$small: 16px;
-$medium: 20px;
-$big: 40px;
-$hight: 100px;
-
-// Paddings
-$small-padding: 30px 0px;
-$large-padding: 8px 15px;
-$big-padding: 20px 30px;
-
-// Margin
-$default-margin: 30px;
-$default-margin-top: 30px;
-$big-margin-top: 90px;
-$about-card-margin: 20px 10px;
-
-// Border radius
-$border-radius: 4px;
+$light_gray: #abacae;
+$dark_gray: #2F2F2F;
+$darker_gray: #252525;
