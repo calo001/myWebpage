@@ -104,11 +104,7 @@ ul {
     margin: 0 auto;
     grid-column: 1;
     grid-row: 2 / 4;
-    img {
-      height: 160px;
-      border-radius: $circular_radius;
-      @include default_shadow;
-    }
+    @include profile_photo;
   }
   #profile_info {
     padding-left: $default_padding;
@@ -144,76 +140,38 @@ ul {
 }
 
 #applications {
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
+  @include main_cards_commons;
   grid-area: apps;
 }
 
 #designs {
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
+  @include main_cards_commons;
   grid-area: desings;
 }
 
 #about {
-  width: 100%;
-  max-height: 300px;
-  overflow: hidden;
+  @include main_cards_commons;
   grid-area: about;
 }
 
 #ipn {
-  width: 100%;
-  height: 100%;
-  background: $dark_gray;
+  @include seconday_cards_commons;
   grid-area: me1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    height: 60px;
-  }
 }
 
 #elementary {
-  width: 100%;
-  height: 100%;;
-  background: $dark_gray;
+  @include seconday_cards_commons;
   grid-area: me2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    height: 60px;
-  }
 }
 
 #chess {
-  width: 100%;
-  height: 100%;;
-  background: $dark_gray;
+  @include seconday_cards_commons;
   grid-area: me3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    height: 60px;
-  }
 }
 
 #walk {
-  width: 100%;
-  height: 100%;;
-  background: $dark_gray;
+  @include seconday_cards_commons;
   grid-area: me4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  img {
-    height: 60px;
-  }
 }
 
 .area_clickeable {
@@ -298,11 +256,7 @@ ul {
       margin: 0 auto;
       grid-column: 1;
       grid-row: 2 / 4;
-      img {
-        height: 160px;
-        border-radius: $circular_radius;
-        @include default_shadow;
-      }
+      @include profile_photo;
       grid-area: picture;
     }
 

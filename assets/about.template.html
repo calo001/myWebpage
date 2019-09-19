@@ -17,7 +17,7 @@
   <body>
     <nav>
       <a href="/">
-        <img src="../public/images/icons8-back-arrow-50.png" width="20px" alt="">
+        <img src="../public/images/icons8-back-arrow-50.png" width="20px" alt="back">
       </a>
       <div class="media">
         <a href="https://github.com/calo001" target="_blank">
@@ -36,10 +36,9 @@
     </nav>
     <section id="#hero">
       <div class="container">
-        <h2>About me</h2>
+        <h2> <span id="s_aboutme">About me</span></h2>
       </div>
     </section>
-
     <section id="list_card">
       <div class="container list_grid">
         <div class="area_info">
@@ -47,69 +46,69 @@
             <figure class="my_image">
               <img src="../public/images/photo.jpg" alt="Me">
             </figure>
-            <p class="my_description">I'm Carlos López Romero, a Mexican Android developer, I currently live in Mexico City. I'm passionate about the technology in mobile development and Linux desktops. I’m convinced that you can do a lot to change the world, the first step is a Hello world!.</p>
+            <p id="s_mydescription" class="my_description">
+              I'm Carlos López Romero, a Mexican Android developer, I currently live in Mexico City. I'm passionate about the technology in mobile development and Linux desktops. I’m convinced that you can do a lot to change the world, the first step is a Hello world!.
+            </p>
           </div>
         </div>
         <div class="area_info">
           <div class="my_info">
-            <h3 class="">Experience</h3>
+            <h3> <span id="s_experience">Experience</span></h3>
             <p class="my_description">
-              I studied a career in Computer Science at IPN, currenly I'm in progress to get my degree and mean while I've realised the next activities:
+              <span id="s_myexperiencedesc">
+                I studied a career in Computer Science at IPN, currently, I'm in progress to get my degree and meanwhile I've been doing the next activities:
+              </span>
               <ul>
-                  <li>I did my Social service at the SECITI (now SECTECI) where I've the opportunity to be Web developer usin HTML, CSS, Javascript and PHP.</li>
-                  <li>Consequently I did my Professional Practice and I continue with my rol as Web developer helping with the mantaining  and support of the site.</li>
+                  <li id="s_exp_1">I did my Social service at the SECITI (now SECTECI) where I have the opportunity to be a Web developer using HTML, CSS, Javascript, and PHP using frameworks like Angular and Lumen.</li>
+                  <li id="s_exp_2">Consequently I did my Professional Practice and I continue with my rol as Web developer helping with the mantaining  and support of the site.</li>
+                  <li id="s_exp_3">Currently I'm working on personal projects focused on the Android and Linux Platform.</li>
               </ul>
           </div>
         </div>
-
         <div class="area_info">
           <div class="my_info">
-            <h3 class="">I love elementary OS</h3>
-            <p class="my_description">
-              I've been using elementary OS since several years, and finally in August 2018 I publish Fondo  and two months later Luna in the elementary's AppCenter.
+            <h3 id="s_loveelementary">I love elementary OS</h3>
+            <p id="s_loveelementarydesc" class="my_description">
+              I've been using the elementary OS for several years, and finally, on August 2018, I published my first public Linux App: Fondo (wallpaper changer using the Unsplash's API) and two months later Luna (calendar widget for desktop) in the elementary's AppCenter, and Flathub Platform.
             </p>
             <div class="logos">
-              <img src="../public/images/techologies/elementaryoslogo.png" height="60px" alt="elementary OS">
-              <img src="../public/images/techologies/vala.svg" height="60px" alt="Vala">
-              <img src="../public/images/techologies/gtk.png" height="60px" alt="Gtk">
+              <img src="../public/images/techologies/elementaryoslogo.png" height="60px" alt="elementary OS" title="elementary OS">
+              <img src="../public/images/techologies/vala.svg" height="60px" alt="Vala" title="Vala">
+              <img src="../public/images/techologies/gtk.png" height="60px" alt="Gtk" title="Gtk">
             </div>
           </div>
         </div>
-
         <div class="area_info">
           <div class="my_info">
-            <h3 class="">Me and Android</h3>
-            <p class="my_description">
-              When I had 19, I get my first Android device, It was an Gateway tablet with Android 4.0. I did some Android apps as scholar projects, but I never publish one until now.
+            <h3 id="s_meandroid">Me and Android</h3>
+            <p id="s_meandroiddescrp1" class="my_description">
+              When I had 19, I get my first Android device, It was a Gateway tablet with Android 4.0. I did some Android apps as scholar projects, but I never publish one until now.
             </p>
-            <p class="my_description">
-              Fondo is my proud personal app, so I decied to create an Android versión and this time share it to the other people not only as a personal or schoolar proyect, but as a real app in Google Play. I'm very happy with that.
+            <p id="s_meandroiddescrp2" class="my_description">
+              I started the Fondo development three months ago and It has been one of the most exciting things have done, this project is based on the Linux versión which means I did my own planning, research, design, and codification for delivery to the community a free App for common use and at the same time scale the application from Linux desktops to a mayor scope.
             </p>
             <div class="logos">
-              <img src="../public/images/techologies/studio.png" height="60px" alt="Android Studio">
-              <img src="../public/images/techologies/kotlin.png" height="60px" alt="Kotlin">
-              <img src="../public/images/techologies/java.png" height="60px" alt="Java">
+              <img src="../public/images/techologies/studio.png" height="60px" alt="Android Studio" title="Android Studio">
+              <img src="../public/images/techologies/kotlin.png" height="60px" alt="Kotlin" title="Kotlin">
+              <img src="../public/images/techologies/java.png" height="60px" alt="Java" title="Java">
             </div>
           </div>
         </div>
-
         <div class="area_info">
           <div class="my_info">
-            <h3 class="">Me and other knowledge</h3>
-            <p class="my_description">
+            <h3 id="s_othernkow">Other knowledge</h3>
+            <p id="s_othernkowdesc" class="my_description">
               I consider have some basics skills in the next technologies:
             </p>
             <div class="logos">
-              <img src="../public/images/techologies/golang.png" height="60px" alt="Golang">
-              <img src="../public/images/techologies/swift.png" height="60px" alt="Swift">
-              <img src="../public/images/techologies/docker.png" height="60px" alt="Docker">
-              <img src="../public/images/techologies/git.png" height="60px" alt="Git">
-              <img src="../public/images/techologies/postgres.png" height="60px" alt="PostgreSQL">
+              <img src="../public/images/techologies/golang.png" height="60px" alt="Golang" title="Golang">
+              <img src="../public/images/techologies/swift.png" height="60px" alt="Swift" title="Swift">
+              <img src="../public/images/techologies/docker.png" height="60px" alt="Docker" title="Docker">
+              <img src="../public/images/techologies/git.png" height="60px" alt="Git" title="Git">
+              <img src="../public/images/techologies/postgres.png" height="60px" alt="PostgreSQL" title="PostgreSQL">
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
 
